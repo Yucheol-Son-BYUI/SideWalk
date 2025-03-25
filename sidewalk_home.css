@@ -93,12 +93,30 @@ section {
     height: 70vh;
   }
 }
+@media (min-width: 768px) {
+  #feature-section{
+    flex-direction: row;
+    align-items: center;
+    gap: 2em;
+    .home-section-content{
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-around;
+    }
+    figure.phone{
+      width: 500px;
+      height: 80vh;
+    }
+  }
+}
 #byui-logo{
   width: 180px;
 }
 .phone {
   flex-grow: 1;
-  min-width: 30vh;
+  min-width: 35vh;
   max-width: 300px; /* 핸드폰 가로 크기 */
   min-height: 30vh;
   max-height: 600px; /* 핸드폰 세로 크기 */
@@ -276,6 +294,34 @@ figure{
   }
 }
 
+@media (min-width: 768px) {
+  .content-type-section{
+    padding: 5% 5%;
+    display: grid;
+    grid-template-rows: 51px 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    h2{
+      grid-area: 1 / 1 / 2 / 3;
+    }
+
+    figure.mission{
+      box-sizing: border-box;
+      height: 300px;
+
+      img{
+        width: auto;
+        height: 150px;
+      }
+      #byui-logo{
+        width: auto;
+        height: 150px;
+      }
+    }
+  }
+}
+
 #team-section{
   display: flex;
   flex-direction: column;
@@ -298,7 +344,46 @@ figure{
     object-fit: cover;
   }
 }
+@media (min-width: 768px) {
+  
+  #team-section{
+    display: grid;
+    grid-template-rows: 110px 1fr;
+    grid-template-columns: 2fr 1fr 2fr;
+    justify-items: center;
+    align-items: center;
+    gap: 1em;
+    padding: 5% 5%;
+    h2{
+      margin: 0;
+    }
+    .home-section-content{
+      grid-area: 1 / 1 / 2 / 5;
+    }
 
+    img:nth-of-type(1){
+      width: auto;
+      height:200px;
+      max-width: 100%;
+      object-fit: cover;
+      margin: -1em 0 2em 0;
+      justify-self: right;
+    }
+    img:nth-of-type(3){
+      width: auto;
+      height:255px;
+      max-width: 100%;
+      object-fit: cover;
+      margin: -1em 0 2em 0;
+      justify-self: left;
+    }
+    img:nth-of-type(2){
+      width: 50px;
+      height: 50px;
+    }
+    
+  }
+}
 #member-section{
   display: flex;
   flex-direction: column;
@@ -328,4 +413,75 @@ figure{
   .profile-card:first-of-type{
     margin-top: -3em;
   }
+}
+@media (min-width: 768px) {
+  #member-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3em;
+  
+    h2{
+      width: 100%;
+    }
+    figure.profile-card{
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: column;
+      align-items: center;
+      width: 200px;
+      height: 322px;
+      margin: 0;
+      img{
+        min-width: 80%;
+      }
+      p{
+        width: fit-content;
+        margin: 0;
+      }
+      p:first-of-type{
+        font-size: 1.5em;
+        font-weight: bold;
+        height: 4em;
+      }
+      p:last-of-type{
+        font-size: 1.2em;
+      }
+    }
+    .profile-card:first-of-type{
+      margin-top: 0em;
+    }
+  }
+}
+.profile-card {
+  width: 200px;              /* Set the width of the card */
+  padding: 20px;             /* Add padding inside the card */
+  background-color: #f4f4f4; /* Light background color */
+  border-radius: 10px;       /* Rounded corners for a modern look */
+  text-align: center;        /* Center the text and image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a 3D effect */
+  font-family: Arial, sans-serif; /* Set a clean, readable font */
+  margin: 20px;              /* Add some space around the card */
+}
+
+.profile-card img {
+  border-radius: 50%;        /* Make the image round */
+  margin-bottom: 15px;       /* Space between image and text */
+  max-width: 80%;            /* Keep the image width within the container */
+  height: auto;              /* Maintain aspect ratio */
+}
+
+.profile-card p {
+  margin: 5px 0;             /* Add spacing between paragraphs */
+  font-size: 1.1em;          /* Slightly larger text for name */
+}
+
+.profile-card p:first-of-type {
+  font-weight: bold;         /* Make the name bold */
+  font-size: 1.2em;          /* Slightly larger font size for name */
+}
+
+.profile-card p:last-of-type {
+  color: #777;               /* Grey color for the job title */
 }
